@@ -15,3 +15,26 @@ int main() {
      cout<<sum;
     
 }
+
+//using function
+
+#include <iostream>
+using namespace std;
+int skipX(int arr[], int n){
+     int sum=0;
+    for(int i=0; i<=5; i++){
+        if(arr[i]!=n){
+            sum=sum+arr[i];
+        }
+    }
+    return sum;
+}
+int main() {
+    int arr[5]={2,4,3,5,6};
+    int n;
+    cin>>n;
+     cout<<skipX(arr,n);
+     
+
+    return 0;
+}
