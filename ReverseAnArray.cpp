@@ -26,3 +26,29 @@ int main() {
     printArray(brr,6);
 
 }
+
+
+//without using function
+#include <iostream>
+using namespace std;
+int main() {
+    int n;
+    cin>>n;
+    int arr[n];
+    
+    for(int i=0; i<n; i++){
+        cin>>arr[i];
+    }
+    
+    int start=0;
+    int end=n-1;
+    
+    for(int i=0; i<n; i++){
+        swap(arr[start],arr[end]);
+        start++;
+        end--;
+        cout<<arr[i]<<" ";
+    }
+    
+    return 0;
+}
