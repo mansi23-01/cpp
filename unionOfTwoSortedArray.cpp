@@ -23,11 +23,12 @@ int main() {
                 j++;
             }
             else{
+                 cout<<arr2[j];
                 j++;
-                i++;
             }
         }
     }
+    /* Print remaining elements of the larger array */
     while(i<n){
         cout<<arr1[i];
         i++;
