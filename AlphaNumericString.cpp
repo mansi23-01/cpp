@@ -2,55 +2,25 @@
 
 #include <iostream>
 using namespace std;
-
 int main() {
    string name;
    cin>>name;
 
-   string low, upp, num;
+   int n= name.size();
 
-   for(char c: name){
-       if(c>='a'&& c<='z'){
-           low=low+c;
+   string low,upp,num;
+
+   for(int i=0; i<n; i++){
+       if(name[i]>='a' && name[i]<='z'){
+           low=low+name[i];
        }
-       else if(c>='A'&& c<='Z'){
-           upp=upp+c;
+       if(name[i]>='A' && name[i]<='Z'){
+           upp=upp+name[i];
        }
-       else{
-           num=num+c;
+       if(name[i]>='0' && name[i]<='9'){
+           num=num+name[i];
        }
-   }
-    cout<<low<<" "<<upp<<" "<<num;
 }
-
-
-//second method using in-built function that is islower, isupper, isdigit
-
-#include <iostream>
-using namespace std;
-int main() {
-
-string name;
-cin>>name;
-
-string low, up, num;
-
-    for(char c: name){
-
-    if(islower(c)){
-            low =low + c;
-    }
-    if(isupper(c)){
-        up=up+c;
-    }
-    if(isdigit(c)){
-        num += c;
-    }
-}
-
-cout<<low;
-cout<<up;
-cout<<num;
-
+cout<<low<<upp<<num;
 }
 
