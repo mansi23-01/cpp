@@ -1,53 +1,110 @@
 #include <iostream>
-#include <bits/stdc++.h>
 #include <vector>
+#include <bits/stdc++.h>
 using namespace std;
-int main() {
-    int n;
-    cin>>n;
+
+int addEO(int arr[], int n){
+    if(n<=3){
+       return 0;
+   }
+
+   vector <int>even;
+   for(int i=0; i<n;i++){
+       if(i%2==0){
+        even.push_back(arr[i]);
+       }
+   }
+  
+   sort(even.begin(), even.end());
+
+   vector <int> odd;
+   for(int i=0; i<n; i++){
+       if(i%2!=0){
+           odd.push_back(arr[i]);
+       }
+   }
     
-    if (n <= 3) {
-        cout << "0" << endl;
-        return 0;
-    }
+   sort(odd.begin(), odd.end());
 
-  int arr[n];
-  for(int i=0; i<n; i++){
-      cin>>arr[i];
-  }
+   return even[1]+odd[1];
+}
 
- sort(arr, arr + n);
+int main() {
+     int n;
+   cin>>n;
 
- for(int i=0; i<n; i++){
-     cout<<arr[i];
- }
- cout<<endl;
+   int arr[n];
 
- vector <int> evenIndex;
- 
- for(int i=0; i<n; i++){
-     if(i%2==0){
-         evenIndex.push_back(arr[i]);
-     }
- }
- for(int i=0; i<evenIndex.size(); i++){
-     cout<<evenIndex[i];
- }
+   for(int i=0; i<n; i++){
+       cin>>arr[i];
+   }
 
- cout<<endl;
+   int result= addEO(arr, n);
+   cout<<result;
+}
+vector <int>even;
+   for(int i=0; i<n;i++){
+       if(i%2==0){
+        even.push_back(arr[i]);
+       }
+   }
+  
+   sort(even.begin(), even.end());
 
- vector <int> oddIndex;
+   vector <int> odd;
+   for(int i=0; i<n; i++){
+       if(i%2!=0){
+           odd.push_back(arr[i]);
+       }
+   }
+    
+   sort(odd.begin(), odd.end());
 
- for(int i=0; i<n; i++){
-     if(i%2 !=0){
-         oddIndex.push_back(arr[i]);
-     }
- }
- for(int i=0; i<oddIndex.size(); i++){
-     cout<<oddIndex[i];
- }
+   cout<<even[1]+odd[1];
 
- cout<<endl<<"sum is:"<<oddIndex[1]+evenIndex[1];
+}
+//using function
+#include <iostream>
+#include <vector>
+#include <bits/stdc++.h>
+using namespace std;
 
+int addEO(int arr[], int n){
+    if(n<=3){
+       return 0;
+   }
 
+   vector <int>even;
+   for(int i=0; i<n;i++){
+       if(i%2==0){
+        even.push_back(arr[i]);
+       }
+   }
+  
+   sort(even.begin(), even.end());
+
+   vector <int> odd;
+   for(int i=0; i<n; i++){
+       if(i%2!=0){
+           odd.push_back(arr[i]);
+       }
+   }
+    
+   sort(odd.begin(), odd.end());
+
+   return even[1]+odd[1];
+}
+
+int main() {
+     int n;
+   cin>>n;
+
+   int arr[n];
+
+   for(int i=0; i<n; i++){
+       cin>>arr[i];
+   }
+
+   int result= addEO(arr, n);
+   cout<<result;
 }
