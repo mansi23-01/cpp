@@ -13,8 +13,8 @@ int main() {
      int a,b;
     for(int i=0; i<n; i++){
          if(i==num){
-           a= arr[num]-arr[i-1];
-           b= arr[num]-arr[i+1];
+          a= abs(arr[num]-arr[i-1]);
+          b= abs(arr[num]-arr[i+1]);
          }
      }
      cout<<a+b;
