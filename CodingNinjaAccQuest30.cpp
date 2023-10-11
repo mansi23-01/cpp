@@ -61,3 +61,36 @@ int main() {
     return 0;
 }
 
+
+//without using function
+#include <iostream>
+using namespace std;
+int main() {
+    string names1;
+    cin>>names1;
+    string names2;
+    cin>>names2;
+    int n=names1.length();
+    int m=names2.length();
+
+     bool isAnagram;
+    for(int i=0; i<n; i++){
+        isAnagram=false;
+        for(int j=0; j<m; j++){
+            if(names1[i]==names2[j]){
+                isAnagram=true;
+                break;
+            }
+        }
+
+    }
+
+    if(isAnagram==true){
+        cout<<"yes";
+    }
+    else{
+        cout<<"no";
+    }
+}
+
+
