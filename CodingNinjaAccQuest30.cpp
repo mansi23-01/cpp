@@ -28,6 +28,49 @@ int main() {
   }
 }
 
+//without using function
+
+#include <iostream>
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+    string names1;
+    string names2;
+    cin>>names1;
+    cin>>names2;
+
+    sort(names1.begin(),names1.end());
+    sort(names2.begin(),names2.end());
+
+    cout<<names1;
+    cout<<endl;
+    cout<<names2;
+
+    
+bool isAnagram;
+    for(int i=0; i<names1.length(); i++){
+        isAnagram=false;
+        for(int j=0; j<names2.length(); j++){
+            if(names1[i]==names2[j]){
+                isAnagram=true;  
+                break;
+            }   
+            else{
+                break;
+            }   
+        }
+    }
+
+    if(isAnagram==true){
+        cout<<"yes";
+    }
+    else{
+        cout<<"no";
+    }
+
+}
+
+
 //method2
 #include <iostream>
 #include <string>
